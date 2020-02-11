@@ -322,6 +322,3 @@ fabric.properties
 
 #/static
 /staticfiles
-
-
-user/migrations

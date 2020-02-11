@@ -44,4 +44,8 @@ Install mysql in pip! If you have error when installing mysqlclient
     or 
     sudo apt-get install libssl-dev
     pip install mysqlclient
-        
+
+Статичный локализация
+
+    django-admin compilemessages
+    django-admin.py makemessages -a       

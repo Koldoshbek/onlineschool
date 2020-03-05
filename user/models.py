@@ -25,6 +25,10 @@ class Profile(models.Model):
     phone_number = models.CharField(max_length=30, blank=True, null=True, default=None)
     gender = models.PositiveSmallIntegerField(choices=GENDER_CHOICES, blank=True, default=MALE)
     photo = models.ImageField(upload_to='photo/', default='photo/foto.jpg')
+    fathers_name = models.CharField(max_length=256, blank=True, null=True)
+    mothers_name = models.CharField(max_length=256, blank=True, null=True)
+    date_of_birth = models.DateField(blank=True, null=True)
+    address = models.CharField(max_length=256, blank=True, null=True)
 
     def __str__(self):
         return self.user.username

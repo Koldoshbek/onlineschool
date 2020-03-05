@@ -3,12 +3,13 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+#: onlineschool/urls.py:29
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-17 14:49+0600\n"
+"POT-Creation-Date: 2020-03-05 14:17+0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,25 +21,69 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: onlineschool/settings.py:121
+#: onlineschool/settings.py:124
 msgid "Russian"
 msgstr ""
 
-#: onlineschool/settings.py:122
+#: onlineschool/settings.py:125
 msgid "English"
 msgstr ""
 
-#: onlineschool/urls.py:29
+#: onlineschool/urls.py:30
 msgid "user/"
 msgstr ""
 
-#: templates/user/profile.html:12
-msgid "helloworld"
-msgstr "Привет мир"
+#: onlineschool/urls.py:31
+msgid "library/"
+msgstr ""
+
+#: templates/user/profile.html:9
+msgid "students"
+msgstr "Студенты"
+
+#: templates/user/profile.html:23
+msgid "about_me"
+msgstr "О себе"
+
+#: templates/user/profile.html:59
+msgid "name"
+msgstr "Имя"
+
+#: templates/user/profile.html:63
+msgid "gender"
+msgstr "Пол"
+
+#: templates/user/profile.html:65
+msgid "male"
+msgstr "Мужской"
+
+#: templates/user/profile.html:67
+msgid "female"
+msgstr "Женский"
+
+#: templates/user/profile.html:73
+msgid "fathers_name"
+msgstr "Отец"
+
+#: templates/user/profile.html:79
+msgid "mothers_name"
+msgstr "Мать"
+
+#: templates/user/profile.html:85
+msgid "date_of_birth"
+msgstr "День рождения"
+
+#: templates/user/profile.html:94
+msgid "address"
+msgstr "Адресс"
+
+#: templates/user/profile.html:98
+msgid "phone_number"
+msgstr "Номер телефона"
 
 #: venv/lib/python3.7/site-packages/django/contrib/messages/apps.py:7
 msgid "Messages"
-msgstr ""
+msgstr "Сообщения"
 
 #: venv/lib/python3.7/site-packages/django/contrib/sitemaps/apps.py:7
 msgid "Site Maps"
@@ -1211,3 +1256,6 @@ msgstr ""
 #: venv/lib/python3.7/site-packages/modeltranslation/widgets.py:25
 msgid "None"
 msgstr ""
+
+#~ msgid "helloworld"
+#~ msgstr "Привет мир"

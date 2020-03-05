@@ -27,6 +27,7 @@ urlpatterns = [
 
 urlpatterns += i18n_patterns(
     path(_(r'user/'), include('user.urls')),
+    path(_(r'library/'), include('library.urls')),
 )
 
 if settings.DEBUG:

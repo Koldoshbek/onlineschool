@@ -1,4 +1,6 @@
 {% load static %}
+{% load i18n %}
+{% load widget_tweaks %}
 <!doctype html>
 <html class="no-js" lang="">
 
@@ -57,8 +59,15 @@
                        data-toggle="dropdown"
                        aria-expanded="false">
                         <div class="admin-title">
-                            <h5 class="item-title">Stevne Zone</h5>
-                            <span>Admin</span>
+                            <h5 class="item-title">{{ user.first_name }} {{ user.last_name }}</h5>
+                            {% if user.profile.role == 1 %}
+                                <span>Schoolchild</span>
+                            {% elif user.profile.role == 2 %}
+                                <span>Director</span>
+                            {% elif user.profile.role == 3 %}
+                                <span>Parent</span>
+                            {% endif %}
+
                         </div>
                         <div class="admin-img">
                             <img src="{% static 'img/figure/admin.jpg' %}" alt="Admin">
@@ -203,16 +212,38 @@
                         </div>
                     </div>
                 </li>
+
                 <li class="navbar-item dropdown header-language">
-                    <a class="navbar-nav-link dropdown-toggle" href="student-details.html#" role="button"
+                    <a class="navbar-nav-link dropdown-toggle" href="add-teacher.html#" role="button"
                        data-toggle="dropdown" aria-expanded="false"><i class="fas fa-globe-americas"></i>EN</a>
                     <div class="dropdown-menu dropdown-menu-right">
-                        <a class="dropdown-item" href="student-details.html#">English</a>
-                        <a class="dropdown-item" href="student-details.html#">Spanish</a>
-                        <a class="dropdown-item" href="student-details.html#">Franchis</a>
-                        <a class="dropdown-item" href="student-details.html#">Chiness</a>
+
+                        <a class="dropdown-item" href="#">English</a>
+                        <a class="dropdown-item" href="add-teacher.html#">Spanish</a>
+                        <a class="dropdown-item" href="add-teacher.html#">Franchis</a>
+                        <a class="dropdown-item" href="add-teacher.html#">Chiness</a>
                     </div>
                 </li>
+
+                {#                    <form action="{% url 'set_language' %}" method="post"#}
+                {#                          class="dropdown-menu dropdown-menu-right">{% csrf_token %}#}
+                {#                        <input name="next" type="hidden" value="{{ redirect_to }}"/>#}
+                {#                        <select name="language" class="navbar-item dropdown header-language">#}
+                {#                            {% get_current_language as LANGUAGE_CODE %}#}
+                {#                            {% get_available_languages as LANGUAGES %}#}
+                {#                            {% get_language_info_list for LANGUAGES as languages %}#}
+                {#                            {% for language in languages %}#}
+                {#                                <option class="" value="{{ language.code }}"#}
+                {#                                        {% if language.code == LANGUAGE_CODE %}#}
+                {#                                        selected="selected"{% endif %}>#}
+                {#                                    {{ language.name_local }}#}
+                {#                                </option>#}
+                {#                            {% endfor %}#}
+                {#                        </select>#}
+                {#                        <input type="submit" value="Go"/>#}
+                {#                    </form>#}
+
+
             </ul>
         </div>
     </div>

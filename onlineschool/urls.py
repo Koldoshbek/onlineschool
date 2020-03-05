@@ -26,8 +26,10 @@ urlpatterns = [
 ]
 
 urlpatterns += i18n_patterns(
+    path(_(r''), include('main.urls')),
     path(_(r'user/'), include('user.urls')),
     path(_(r'library/'), include('library.urls')),
+    path('i18n/', include('django.conf.urls.i18n')),
 )
 
 if settings.DEBUG:

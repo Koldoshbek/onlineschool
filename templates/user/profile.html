@@ -41,7 +41,7 @@
                     </div>
                     <div class="item-content">
                         <div class="header-inline item-header">
-                            <h3 class="text-dark-medium font-medium">Jessia Rose</h3>
+                            <h3 class="text-dark-medium font-medium">{{ user.first_name }} {{ user.last_name }}</h3>
                             <div class="header-elements">
                                 <ul>
                                     <li><a href="student-details.html#"><i class="far fa-edit"></i></a></li>
@@ -58,11 +58,16 @@
                                 <tbody>
                                 <tr>
                                     <td>Name:</td>
-                                    <td class="font-medium text-dark-medium">Jessia Rose</td>
+                                    <td class="font-medium text-dark-medium">{{ user.first_name }} {{ user.last_name }}</td>
                                 </tr>
                                 <tr>
                                     <td>Gender:</td>
-                                    <td class="font-medium text-dark-medium">Female</td>
+                                    {% if user.profile.gender == 1 %}
+                                        <td class="font-medium text-dark-medium">Male</td>
+                                    {% elif user.profile.gender == 2 %}
+                                        <td class="font-medium text-dark-medium">Female</td>
+                                    {% endif %}
+
                                 </tr>
                                 <tr>
                                     <td>Father Name:</td>
@@ -76,17 +81,11 @@
                                     <td>Date Of Birth:</td>
                                     <td class="font-medium text-dark-medium">07.08.2016</td>
                                 </tr>
-                                <tr>
-                                    <td>Religion:</td>
-                                    <td class="font-medium text-dark-medium">Islam</td>
-                                </tr>
-                                <tr>
-                                    <td>Father Occupation:</td>
-                                    <td class="font-medium text-dark-medium">Graphic Designer</td>
-                                </tr>
+
+
                                 <tr>
                                     <td>E-mail:</td>
-                                    <td class="font-medium text-dark-medium">jessiarose@gmail.com</td>
+                                    <td class="font-medium text-dark-medium">{{ user.email }}</td>
                                 </tr>
                                 <tr>
                                     <td>Admission Date:</td>
@@ -110,7 +109,7 @@
                                 </tr>
                                 <tr>
                                     <td>Phone:</td>
-                                    <td class="font-medium text-dark-medium">+ 88 98568888418</td>
+                                    <td class="font-medium text-dark-medium">{{ user.profile.phone_number }}</td>
                                 </tr>
                                 </tbody>
                             </table>

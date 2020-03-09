@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'user',
     'library',
     'main',
+    'subject',
     'widget_tweaks',
 ]
 

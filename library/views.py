@@ -1,10 +1,12 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render
-from django.views.generic import TemplateView
+from django.urls import reverse_lazy
+from django.views.generic import TemplateView, CreateView
 
 from library.models import Book
 
 
-class LibraryView(TemplateView):
+class LibraryView(LoginRequiredMixin, TemplateView):
     template_name = 'library/all_books.html'
 
     def get(self, request, *args, **kwargs):
@@ -24,3 +26,10 @@ class LibraryView(TemplateView):
             'books': books,
         }
         return render(request, self.template_name, context)
+
+
+class AddBookView(LoginRequiredMixin, CreateView):
+    model = Book
+    fields = '__all__'
+    success_url = reverse_lazy('library')
+    template_name = 'library/add_book.html'

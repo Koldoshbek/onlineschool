@@ -30,6 +30,7 @@ urlpatterns += i18n_patterns(
     path(_(r'user/'), include('user.urls')),
     path(_(r'library/'), include('library.urls')),
     path(_(r'news/'), include('news.urls')),
+    path(_(r'onlineexamination/'), include('onlineexamination.urls')),
     path('i18n/', include('django.conf.urls.i18n')),
 )
 

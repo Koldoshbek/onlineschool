@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'news',
     'subject',
     'widget_tweaks',
+    'onlineexamination',
 ]
 
 MIDDLEWARE = [

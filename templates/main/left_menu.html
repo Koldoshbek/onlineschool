@@ -1,4 +1,5 @@
 {% load static %}
+{% load my_tags %}
 <div class="sidebar-menu-content">
     <ul class="nav nav-sidebar-menu sidebar-toggle-view">
         <li class="nav-item sidebar-nav-item">
@@ -22,7 +23,7 @@
         <li class="nav-item sidebar-nav-item">
             <a href="student-details.html#" class="nav-link"><i
                     class="flaticon-classmates"></i><span>Students</span></a>
-            <ul class="nav sub-group-menu sub-group-active">
+            <ul class="nav sub-group-menu ">
                 <li class="nav-item">
                     <a href="all-student.html" class="nav-link"><i class="fas fa-angle-right"></i>All
                         Students</a>
@@ -83,12 +84,16 @@
         <li class="nav-item sidebar-nav-item">
             <a href="student-details.html#" class="nav-link"><i
                     class="flaticon-books"></i><span>Library</span></a>
-            <ul class="nav sub-group-menu">
+            {% url 'library' as library %}
+            {% url 'add_book' as book_upload %}
+            <ul class="nav sub-group-menu {% active_menu request library %} {% active_menu request book_upload %}">
                 <li class="nav-item">
-                    <a href="all-book.html" class="nav-link"><i class="fas fa-angle-right"></i>All Book</a>
+                    <a href="{% url 'library' %}" class="nav-link {% active request library %}"><i
+                            class="fas fa-angle-right"></i>All Book</a>
                 </li>
                 <li class="nav-item">
-                    <a href="add-book.html" class="nav-link"><i class="fas fa-angle-right"></i>Add New Book</a>
+                    <a href="{% url 'add_book' %}" class="nav-link {% active request book_upload %}"><i
+                            class="fas fa-angle-right"></i>Add New Book</a>
                 </li>
             </ul>
         </li>
@@ -136,13 +141,15 @@
         <li class="nav-item sidebar-nav-item">
             <a href="student-details.html#" class="nav-link"><i
                     class="flaticon-shopping-list"></i><span>Exam</span></a>
-            <ul class="nav sub-group-menu">
+            {% url 'exams' as exams %}
+            <ul class="nav sub-group-menu {% active_menu request exams %}">
                 <li class="nav-item">
                     <a href="exam-schedule.html" class="nav-link"><i class="fas fa-angle-right"></i>Exam
                         Schedule</a>
                 </li>
                 <li class="nav-item">
-                    <a href="exam-grade.html" class="nav-link"><i class="fas fa-angle-right"></i>Exam Grades</a>
+                    <a href="{% url 'exams' %}" class="nav-link {% active request exams %}"><i
+                            class="fas fa-angle-right"></i>Exam Grades</a>
                 </li>
             </ul>
         </li>
@@ -154,10 +161,10 @@
             <a href="hostel.html" class="nav-link"><i class="flaticon-bed"></i><span>Hostel</span></a>
         </li>
         <li class="nav-item">
-            <a href="notice-board.html" class="nav-link"><i class="flaticon-script"></i><span>Notice</span></a>
+            <a href="{% url 'news' %}" class="nav-link"><i class="flaticon-script"></i><span>Notice</span></a>
         </li>
         <li class="nav-item">
-            <a href="messaging.html" class="nav-link"><i class="flaticon-chat"></i><span>Messeage</span></a>
+            <a href="{% url 'message' %}" class="nav-link"><i class="flaticon-chat"></i><span>Message</span></a>
         </li>
         <li class="nav-item sidebar-nav-item">
             <a href="student-details.html#" class="nav-link"><i

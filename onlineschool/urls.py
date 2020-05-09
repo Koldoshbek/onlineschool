@@ -20,8 +20,11 @@ from django.conf import settings
 from django.conf.urls.i18n import i18n_patterns
 from django.utils.translation import ugettext_lazy as _
 
+from user.views import send_email
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('send_email/', send_email, name='send_email'),
 
 ]
 

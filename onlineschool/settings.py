@@ -93,6 +93,15 @@ DATABASES = {
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
 
+DEFAULT_FROM_EMAIL = 'testingturizm@gmail.com'
+SERVER_EMAIL = 'testingturizm@gmail.com'
+EMAIL_USE_TLS = False
+EMAIL_USE_SSL = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 465
+EMAIL_HOST_USER = 'testingturizm@gmail.com'
+EMAIL_HOST_PASSWORD = 'Suiunalievich12345'
+
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',

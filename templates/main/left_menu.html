@@ -5,31 +5,41 @@
         <li class="nav-item sidebar-nav-item">
             <a href="student-details.html#" class="nav-link"><i
                     class="flaticon-dashboard"></i><span>Dashboard</span></a>
-            <ul class="nav sub-group-menu">
+            {% url 'admin_page' as admin_page %}
+            {% url 'student_page' as student_page %}
+            {% url 'parent_page' as parent_page %}
+            {% url 'teacher_page' as teacher_page %}
+            <ul class="nav sub-group-menu {% active_menu request admin_page %} {% active_menu request student_page %} {% active_menu request parent_page %} {% active_menu request teacher_page %}">
                 <li class="nav-item">
-                    <a href="index.html" class="nav-link"><i class="fas fa-angle-right"></i>Admin</a>
+                    <a href="{% url 'admin_page' %}" class="nav-link {% active request admin_page %}"><i
+                            class="fas fa-angle-right"></i>Admin</a>
                 </li>
                 <li class="nav-item">
-                    <a href="index3.html" class="nav-link"><i class="fas fa-angle-right"></i>Students</a>
+                    <a href="{% url 'student_page' %}" class="nav-link {% active request student_page %}"><i
+                            class="fas fa-angle-right"></i>Students</a>
                 </li>
                 <li class="nav-item">
-                    <a href="index4.html" class="nav-link"><i class="fas fa-angle-right"></i>Parents</a>
+                    <a href="{% url 'parent_page' %}" class="nav-link {% active request parent_page %}"><i
+                            class="fas fa-angle-right"></i>Parents</a>
                 </li>
                 <li class="nav-item">
-                    <a href="index5.html" class="nav-link"><i class="fas fa-angle-right"></i>Teachers</a>
+                    <a href="{% url 'teacher_page' %}" class="nav-link {% active request teacher_page %}"><i
+                            class="fas fa-angle-right"></i>Teachers</a>
                 </li>
             </ul>
         </li>
         <li class="nav-item sidebar-nav-item">
             <a href="student-details.html#" class="nav-link"><i
                     class="flaticon-classmates"></i><span>Students</span></a>
-            <ul class="nav sub-group-menu ">
+            {% url 'all_students' as all_students %}
+            <ul class="nav sub-group-menu {% active_menu request all_students %} ">
                 <li class="nav-item">
-                    <a href="all-student.html" class="nav-link"><i class="fas fa-angle-right"></i>All
+                    <a href="{% url 'all_students' %}" class="nav-link {% active request all_students %}"><i
+                            class="fas fa-angle-right"></i>All
                         Students</a>
                 </li>
                 <li class="nav-item">
-                    <a href="student-details.html" class="nav-link menu-active"><i
+                    <a href="student-details.html" class="nav-link"><i
                             class="fas fa-angle-right"></i>Student Details</a>
                 </li>
                 <li class="nav-item">
@@ -45,9 +55,11 @@
         <li class="nav-item sidebar-nav-item">
             <a href="student-details.html#" class="nav-link"><i
                     class="flaticon-multiple-users-silhouette"></i><span>Teachers</span></a>
-            <ul class="nav sub-group-menu">
+            {% url 'all_teachers' as all_teachers %}
+            <ul class="nav sub-group-menu {% active_menu request all_teachers %}">
                 <li class="nav-item">
-                    <a href="all-teacher.html" class="nav-link"><i class="fas fa-angle-right"></i>All
+                    <a href="{% url 'all_teachers' %}" class="nav-link {% active request all_teachers %}"><i
+                            class="fas fa-angle-right"></i>All
                         Teachers</a>
                 </li>
                 <li class="nav-item">
@@ -67,9 +79,11 @@
         <li class="nav-item sidebar-nav-item">
             <a href="student-details.html#" class="nav-link"><i
                     class="flaticon-couple"></i><span>Parents</span></a>
-            <ul class="nav sub-group-menu">
+            {% url 'all_parents' as all_parents %}
+            <ul class="nav sub-group-menu {% active_menu request all_parents %}">
                 <li class="nav-item">
-                    <a href="all-parents.html" class="nav-link"><i class="fas fa-angle-right"></i>All
+                    <a href="{% url 'all_parents' %}" class="nav-link {% active request all_parents %}"><i
+                            class="fas fa-angle-right"></i>All
                         Parents</a>
                 </li>
                 <li class="nav-item">
@@ -154,51 +168,15 @@
             </ul>
         </li>
         <li class="nav-item">
-            <a href="transport.html" class="nav-link"><i
-                    class="flaticon-bus-side-view"></i><span>Transport</span></a>
+            {% url 'news' as news %}
+            <a href="{% url 'news' %}" class="nav-link {% active request news %}"><i class="flaticon-script"></i><span>Notice</span></a>
         </li>
         <li class="nav-item">
-            <a href="hostel.html" class="nav-link"><i class="flaticon-bed"></i><span>Hostel</span></a>
+            {% url 'message' as message %}
+            <a href="{% url 'message' %}" class="nav-link {% active request message %}"><i
+                    class="flaticon-chat"></i><span>Message</span></a>
         </li>
-        <li class="nav-item">
-            <a href="{% url 'news' %}" class="nav-link"><i class="flaticon-script"></i><span>Notice</span></a>
-        </li>
-        <li class="nav-item">
-            <a href="{% url 'message' %}" class="nav-link"><i class="flaticon-chat"></i><span>Message</span></a>
-        </li>
-        <li class="nav-item sidebar-nav-item">
-            <a href="student-details.html#" class="nav-link"><i
-                    class="flaticon-menu-1"></i><span>UI Elements</span></a>
-            <ul class="nav sub-group-menu">
-                <li class="nav-item">
-                    <a href="notification-alart.html" class="nav-link"><i
-                            class="fas fa-angle-right"></i>Alart</a>
-                </li>
-                <li class="nav-item">
-                    <a href="button.html" class="nav-link"><i class="fas fa-angle-right"></i>Button</a>
-                </li>
-                <li class="nav-item">
-                    <a href="grid.html" class="nav-link"><i class="fas fa-angle-right"></i>Grid</a>
-                </li>
-                <li class="nav-item">
-                    <a href="modal.html" class="nav-link"><i class="fas fa-angle-right"></i>Modal</a>
-                </li>
-                <li class="nav-item">
-                    <a href="progress-bar.html" class="nav-link"><i class="fas fa-angle-right"></i>Progress
-                        Bar</a>
-                </li>
-                <li class="nav-item">
-                    <a href="ui-tab.html" class="nav-link"><i class="fas fa-angle-right"></i>Tab</a>
-                </li>
-                <li class="nav-item">
-                    <a href="ui-widget.html" class="nav-link"><i
-                            class="fas fa-angle-right"></i>Widget</a>
-                </li>
-            </ul>
-        </li>
-        <li class="nav-item">
-            <a href="map.html" class="nav-link"><i class="flaticon-planet-earth"></i><span>Map</span></a>
-        </li>
+
         <li class="nav-item">
             <a href="account-settings.html" class="nav-link"><i
                     class="flaticon-settings"></i><span>Account</span></a>
